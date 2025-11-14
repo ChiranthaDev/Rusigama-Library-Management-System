@@ -1,2 +1,0 @@
-web: python app.py
-# For MongoDB version, use: web: python app_mongodb.py

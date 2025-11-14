@@ -1,8 +1,6 @@
 # Library Management System Database Schema
 
-## Database Setup for PlanetScale
-
-This document outlines the MySQL database schema for the Library Management System to be deployed on PlanetScale.
+## Database Setup
 
 ## Tables
 
@@ -90,33 +88,3 @@ INSERT INTO transactions (member_id, book_id, borrow_date, due_date, return_date
 (1, 1, '2023-05-01', '2023-05-15', NULL),
 (2, 2, '2023-05-03', '2023-05-17', '2023-05-10');
 ```
-
-## PlanetScale Deployment Notes
-
-1. PlanetScale uses MySQL-compatible syntax
-2. Foreign key constraints are supported in PlanetScale
-3. Use VARCHAR(255) for most string fields
-4. Use DECIMAL(10, 2) for monetary values
-5. TIMESTAMP fields automatically handle time zone conversions
-6. Indexes should be created for frequently queried columns
-
-## Connection Details
-
-To connect to your PlanetScale database, you'll need:
-- Host: Your PlanetScale database host
-- Username: Your PlanetScale username
-- Password: Your PlanetScale password
-- Database name: Your database name
-
-Example connection string:
-```
-mysql://<username>:<password>@<host>/<database_name>
-```
-
-## Recommended Schema Migrations
-
-When making changes to your schema in PlanetScale:
-1. Use branching feature to create isolated environments
-2. Test schema changes in development branch
-3. Deploy to production after testing
-4. Use non-blocking schema changes when possible
